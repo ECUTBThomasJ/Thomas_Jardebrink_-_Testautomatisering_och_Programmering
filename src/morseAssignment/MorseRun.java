@@ -12,14 +12,15 @@ public class MorseRun {
 
         String input = "";
 
-        System.out.printf("%n%s", "## Program for translating english to morse and vice versa ##");
-        System.out.printf("%n%s", "Morse code represented with star (*) for short and dash (-) for long");
-        System.out.printf("%n%s", "Word spaces in morse represented with spaces and a pipe ( | )");
-        System.out.printf("%n%s", "Non-translated characters represented by #");
-        System.out.printf("%n%s", "Enter either english or morse to be translated on row below.");
+        System.out.printf("%n%s", "## ------- Program for translating English to Morse and vice versa -------- ##");
+        System.out.printf("%n%s", "## ------------------------------------------------------------------------ ##");
+        System.out.printf("%n%s", "## - Morse code represented with star (*) for short and dash (-) for long - ##");
+        System.out.printf("%n%s", "## ---- Word spaces in morse represented with spaces and a pipe ( | ) ----- ##");
+        System.out.printf("%n%s", "## -------------- Non-translated characters represented by ¤ -------------- ##");
+        System.out.printf("%n%s", "## ----- Enter either English or Morse to be translated on row below ------ ##");
         System.out.printf("%n%s","### (!!! to exit): ");
 
-        input = kb.nextLine().toUpperCase();
+        input = kb.nextLine();
 
         while(!input.equals("!!!")){
 
@@ -32,7 +33,7 @@ public class MorseRun {
             }
 
             System.out.printf("%n%s", "Enter either english or morse to be translated: ");
-            input = kb.nextLine().toUpperCase();
+            input = kb.nextLine();
         }
     }
 }

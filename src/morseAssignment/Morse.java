@@ -24,6 +24,9 @@ public class Morse {
         }
     }
     public String translate(String input){
+
+        input = input.toUpperCase();
+
         String output = "";
 
         //Någon form av koll om det är bokstäver eller siffror.
@@ -39,7 +42,7 @@ public class Morse {
                 if(translated[i] != null){
                     output += (translated[i]);
                 }else{
-                    output += "#";
+                    output += "¤";
                 }
             }
 
@@ -55,7 +58,7 @@ public class Morse {
                         output += (translated[i] + " ");
                     }
                 }else {
-                    output += "#";
+                    output += "¤";
                 }
             }
         }
