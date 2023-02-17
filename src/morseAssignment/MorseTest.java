@@ -75,7 +75,6 @@ public class MorseTest {
 
         //Act
         String actual = mt.translate(testData);
-
         //Assert
         assertEquals(expected, actual);
 

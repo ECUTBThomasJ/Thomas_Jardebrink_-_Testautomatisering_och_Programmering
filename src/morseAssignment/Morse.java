@@ -29,39 +29,47 @@ public class Morse {
 
         String output = "";
 
-        //Någon form av koll om det är bokstäver eller siffror.
-      /*  for (int i = 0; i < input.length(); i++) {
-            input.charAt(i)
-        }*/
-
-        if ((input.contains("*") || input.contains("-"))){
+        if (isMorse(input)){
             String[] morseLetters = input.split(" ");
-            String[] translated = new String[morseLetters.length];
             for (int i = 0; i < morseLetters.length; i++) {
-                translated[i] = morseMap.get(morseLetters[i]);
-                if(translated[i] != null){
-                    output += (translated[i]);
-                }else{
-                    output += "¤";
-                }
+                output += morseMap.get(morseLetters[i]);
             }
 
-        }else{
+        }else if (isEnglish(input)){
             String[] englishLetters = input.split("");
-            String[] translated = new String[englishLetters.length];
             for (int i = 0; i < englishLetters.length; i++) {
-                translated[i] = morseMap.get(englishLetters[i]);
-                if(translated[i] != null){
-                    if(i == (englishLetters.length - 1)){
-                        output += (translated[i]);
-                    }else{
-                        output += (translated[i] + " ");
-                    }
-                }else {
-                    output += "¤";
+                if(i == (englishLetters.length - 1)){
+                    output += morseMap.get(englishLetters[i]);
+                }else{
+                    output += (morseMap.get(englishLetters[i]) + " ");
                 }
             }
+        }else{
+            System.out.println("Enter English OR Morse, not both at the same time.");
         }
         return output;
+    }
+    private boolean isEnglish(String input) {
+        boolean notEnglish = true;
+
+        for (int i = 0; i < input.length(); i++) {
+            if(!((input.charAt(i) >= 'A' && input.charAt(i) <= 'Z') || (input.charAt(i) >= '0'
+                    && input.charAt(i) <= '9') || (input.charAt(i) == '.') || (input.charAt(i) == ',')
+                    || (input.charAt(i) == '?') || (input.charAt(i) == ' '))){
+                notEnglish = false;
+            }
+        }
+        return notEnglish;
+    }
+    private boolean isMorse(String input) {
+        boolean notMorse = true;
+
+        for (int i = 0; i < input.length(); i++) {
+            if(!((input.charAt(i) == '*') || (input.charAt(i) == '-')
+                    || (input.charAt(i) == ' ') || (input.charAt(i) == '|'))){
+                notMorse = false;
+            }
+        }
+        return notMorse;
     }
 }
