@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
 
 public class MorseTest {
-    private Morse mt = new Morse();
 
     //Test letter 'E' to morse code
     @Test
     public void testToMorse(){
 
         //Arrange
+        Morse mt = new Morse();
         String testData = "E";
 
         String expected = "*";
@@ -27,6 +27,7 @@ public class MorseTest {
     public void testToEnglish(){
 
         //Arrange
+        Morse mt = new Morse();
         String testData = "*";
 
         String expected = "E";
@@ -43,6 +44,7 @@ public class MorseTest {
     public void testToMorseSentence(){
 
         //Arrange
+        Morse mt = new Morse();
         String testData = "Hello World, is this working?";
 
         String expected = "**** * *-** *-** --- |" +
@@ -62,6 +64,7 @@ public class MorseTest {
     public void testToEnglishSentence(){
 
         //Arrange
+        Morse mt = new Morse();
         String testData = "**** * *-** *-** --- |" +
                 " *-- --- *-* *-** -** --**-- | " +
                 "** *** | - **** ** *** | " +
@@ -79,9 +82,10 @@ public class MorseTest {
     public void testSpecialCharacters(){
 
         //Arrange
+        Morse mt = new Morse();
         String testData = "%#)($&";
 
-        String expected = "";
+        String expected = "### - Invalid Input - ###";
 
         //Act
         String actual = mt.translate(testData);
