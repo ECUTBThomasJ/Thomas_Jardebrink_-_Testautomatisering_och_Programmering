@@ -13,8 +13,6 @@ public class MorseTest {
         //Arrange
         String testData = "E";
 
-        testData = testData.toUpperCase();
-
         String expected = "*";
 
         //Act
@@ -47,8 +45,6 @@ public class MorseTest {
         //Arrange
         String testData = "Hello World, is this working?";
 
-        testData = testData.toUpperCase();
-
         String expected = "**** * *-** *-** --- |" +
                 " *-- --- *-* *-** -** --**-- | " +
                 "** *** | - **** ** *** | " +
@@ -72,6 +68,20 @@ public class MorseTest {
                 "*-- --- *-* -*- ** -* --* **--**";
 
         String expected = "HELLO WORLD, IS THIS WORKING?";
+
+        //Act
+        String actual = mt.translate(testData);
+        //Assert
+        assertEquals(expected, actual);
+
+    }
+    @Test
+    public void testSpecialCharacters(){
+
+        //Arrange
+        String testData = "%#)($&";
+
+        String expected = "";
 
         //Act
         String actual = mt.translate(testData);

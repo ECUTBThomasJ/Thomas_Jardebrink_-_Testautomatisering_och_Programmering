@@ -45,7 +45,7 @@ public class Morse {
                 }
             }
         }else{
-            System.out.println("Enter English OR Morse, not both at the same time.");
+            output = "### - Invalid Input - ###";
         }
         return output;
     }
