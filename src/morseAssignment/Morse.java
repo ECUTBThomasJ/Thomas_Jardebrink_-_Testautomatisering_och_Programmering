@@ -52,10 +52,9 @@ public class Morse {
     private boolean isEnglish(String input) {
         boolean english = true;
 
-        for (int i = 0; i < input.length(); i++) {
-            if(!((input.charAt(i) >= 'A' && input.charAt(i) <= 'Z') || (input.charAt(i) >= '0'
-                    && input.charAt(i) <= '9') || (input.charAt(i) == '.') || (input.charAt(i) == ',')
-                    || (input.charAt(i) == '?') || (input.charAt(i) == ' '))){
+        String[] englishChars = input.split("");
+        for (int i = 0; i < englishChars.length; i++) {
+            if(morseMap.get(englishChars[i]) == null){
                 english = false;
             }
         }

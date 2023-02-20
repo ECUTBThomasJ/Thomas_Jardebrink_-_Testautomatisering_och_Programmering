@@ -26,7 +26,7 @@ public class MorseRun {
                 System.out.printf("%n%s%s", "Translated text: ", input);
             } else{
                 System.out.printf("%n%s", "Unable to translate one or more characters.");
-                System.out.printf("%n%s", "Please use only * and - for Morse, and only");
+                System.out.printf("%n%s", "Please use only *, - and | for Morse, and only");
                 System.out.printf("%n%s%n", "letters (A-Z), numbers (0-9) and . , ? for English.");
             }
 
