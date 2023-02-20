@@ -28,9 +28,9 @@ public class MorseTest {
 
         //Arrange
         Morse mt = new Morse();
-        String testData = "*";
+        String testData = "-";
 
-        String expected = "E";
+        String expected = "T";
 
         //Act
         String actual = mt.translate(testData);
