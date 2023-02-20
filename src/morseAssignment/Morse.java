@@ -50,26 +50,26 @@ public class Morse {
         return output;
     }
     private boolean isEnglish(String input) {
-        boolean notEnglish = true;
+        boolean english = true;
 
         for (int i = 0; i < input.length(); i++) {
             if(!((input.charAt(i) >= 'A' && input.charAt(i) <= 'Z') || (input.charAt(i) >= '0'
                     && input.charAt(i) <= '9') || (input.charAt(i) == '.') || (input.charAt(i) == ',')
                     || (input.charAt(i) == '?') || (input.charAt(i) == ' '))){
-                notEnglish = false;
+                english = false;
             }
         }
-        return notEnglish;
+        return english;
     }
-    private boolean isMorse(String input) {
-        boolean notMorse = true;
+    private boolean isMorse(String input) {   //Lägg till null check
+        boolean morse = true;
 
-        for (int i = 0; i < input.length(); i++) {
-            if(!((input.charAt(i) == '*') || (input.charAt(i) == '-')
-                    || (input.charAt(i) == ' ') || (input.charAt(i) == '|'))){
-                notMorse = false;
+        String[] morseCode = input.split(" ");
+        for (int i = 0; i < morseCode.length; i++) {
+            if(morseMap.get(morseCode[i]) == null){
+                morse = false;
             }
         }
-        return notMorse;
+        return morse;
     }
 }
