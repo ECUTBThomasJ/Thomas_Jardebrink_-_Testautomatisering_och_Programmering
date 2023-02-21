@@ -14,17 +14,17 @@ public class MorseRun {
         System.out.printf("%n%s", "## - Morse code represented with star (*) for short and dash (-) for long - ##");
         System.out.printf("%n%s", "## ---- Word spaces in morse represented with spaces and a pipe ( | ) ----- ##");
         System.out.printf("%n%s", "## ----- Enter either English or Morse to be translated on row below ------ ##");
-        System.out.printf("%n%s","### (!!! to exit): ");
+        System.out.printf("%n%s", "### (!!! to exit): ");
 
         input = kb.nextLine();
 
-        while(!input.equals("!!!")){
+        while (!input.equals("!!!")) {
 
             input = mt.translate(input);
 
-            if(!input.equals("### - Invalid Input - ###")){
+            if (!input.equals("### - Invalid Input - ###")) {
                 System.out.printf("%n%s%s", "Translated text: ", input);
-            } else{
+            } else {
                 System.out.printf("%n%s", "Unable to translate one or more characters.");
                 System.out.printf("%n%s", "Please use only *, - and | for Morse, and only");
                 System.out.printf("%n%s%n", "letters (A-Z), numbers (0-9) and . , ? for English.");

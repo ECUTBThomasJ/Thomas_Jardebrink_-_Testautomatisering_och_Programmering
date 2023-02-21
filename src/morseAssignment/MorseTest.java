@@ -1,13 +1,14 @@
 package morseAssignment;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class MorseTest {
 
     //Test letter 'E' to morse code
     @Test
-    public void testToMorse(){
+    public void testToMorse() {
 
         //Arrange
         Morse mt = new Morse();
@@ -22,9 +23,10 @@ public class MorseTest {
         assertEquals(expected, actual);
 
     }
+
     //Test morse * to English
     @Test
-    public void testToEnglish(){
+    public void testToEnglish() {
 
         //Arrange
         Morse mt = new Morse();
@@ -39,9 +41,10 @@ public class MorseTest {
         assertEquals(expected, actual);
 
     }
+
     //Test translation of English Sentence to morse.
     @Test
-    public void testToMorseSentence(){
+    public void testToMorseSentence() {
 
         //Arrange
         Morse mt = new Morse();
@@ -59,9 +62,10 @@ public class MorseTest {
         assertEquals(expected, actual);
 
     }
+
     //Test translation of English Sentence to morse.
     @Test
-    public void testToEnglishSentence(){
+    public void testToEnglishSentence() {
 
         //Arrange
         Morse mt = new Morse();
@@ -78,8 +82,9 @@ public class MorseTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
-    public void testSpecialCharacters(){
+    public void testSpecialCharacters() {
 
         //Arrange
         Morse mt = new Morse();
