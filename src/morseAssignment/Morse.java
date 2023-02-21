@@ -54,19 +54,27 @@ public class Morse {
 
         String[] englishChars = input.split("");
         for (int i = 0; i < englishChars.length; i++) {
-            if(morseMap.get(englishChars[i]) == null){
-                english = false;
+            if(!((input.charAt(i) >= 'A' && input.charAt(i) <= 'Z') || (input.charAt(i) >= '0'
+                    && input.charAt(i) <= '9') || (input.charAt(i) == '.') || (input.charAt(i) == ',')
+                    || (input.charAt(i) == '?') || (input.charAt(i) == ' '))){
+                if(morseMap.get(englishChars[i]) == null){
+                    english = false;
+                }
             }
+
         }
         return english;
     }
-    private boolean isMorse(String input) {   //Lägg till null check
+    private boolean isMorse(String input) {
         boolean morse = true;
 
         String[] morseCode = input.split(" ");
         for (int i = 0; i < morseCode.length; i++) {
-            if(morseMap.get(morseCode[i]) == null){
+            if(!((input.charAt(i) == '*') || (input.charAt(i) == '-')
+                    || (input.charAt(i) == ' ') || (input.charAt(i) == '|'))){
+                if(morseMap.get(morseCode[i]) == null){
                 morse = false;
+                }
             }
         }
         return morse;
