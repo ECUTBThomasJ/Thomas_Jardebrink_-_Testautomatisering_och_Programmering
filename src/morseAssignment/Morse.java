@@ -52,29 +52,36 @@ public class Morse {
     private boolean isEnglish(String input) {
         boolean english = true;
 
-        String[] englishChars = input.split("");
-        for (int i = 0; i < englishChars.length; i++) {
+        for (int i = 0; i < input.length(); i++) {
             if(!((input.charAt(i) >= 'A' && input.charAt(i) <= 'Z') || (input.charAt(i) >= '0'
                     && input.charAt(i) <= '9') || (input.charAt(i) == '.') || (input.charAt(i) == ',')
                     || (input.charAt(i) == '?') || (input.charAt(i) == ' '))){
-                if(morseMap.get(englishChars[i]) == null){
-                    english = false;
+                english = false;
+            }
+        }
+
+        String[] englishChars = input.split("");
+        for (int i = 0; i < englishChars.length; i++) {
+            if(morseMap.get(englishChars[i]) == null){
+                english = false;
                 }
             }
-
-        }
         return english;
     }
     private boolean isMorse(String input) {
         boolean morse = true;
 
-        String[] morseCode = input.split(" ");
-        for (int i = 0; i < morseCode.length; i++) {
+        for (int i = 0; i < input.length(); i++) {
             if(!((input.charAt(i) == '*') || (input.charAt(i) == '-')
                     || (input.charAt(i) == ' ') || (input.charAt(i) == '|'))){
-                if(morseMap.get(morseCode[i]) == null){
                 morse = false;
-                }
+            }
+        }
+
+        String[] morseCode = input.split(" ");
+        for (int i = 0; i < morseCode.length; i++) {
+            if(morseMap.get(morseCode[i]) == null){
+                morse = false;
             }
         }
         return morse;
